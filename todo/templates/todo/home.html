@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Task List{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+    <h1>{% if user.is_authenticated %} {{user.username}} {% endif %}Tasks</h1>
+    <ul>
+        {% for task in tasks %}
+            <li>
+                {{ task.title }} - {{ task.priority }}
+                <a href="{% url 'task_detail' pk=task.pk %}">View</a>
+                <a href="{% url 'edit_task' pk=task.pk %}">Edit</a>
+                <a href="{% url 'delete_task' pk=task.pk %}">Delete</a>
+            </li>
+        {% empty %}
+            <li>No tasks found.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

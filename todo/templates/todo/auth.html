@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}{% if page == "signup" %}Sign Up{% else %}Log In{% endif %}{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/auth.css' %}">
+    
+    <div class="auth-container">
+        <h2>{% if page == "signup" %}Sign Up{% else %}Log In{% endif %}</h2>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">{% if page == "signup" %}Sign Up{% else %}Log In{% endif %}</button>
+        </form>
+
+        {% if page == "signup" %}
+        <p>Already have an account? <a href="{% url 'login' %}">Log In</a></p>
+        {% else %}
+            <p>Don't have an account? <a href="{% url 'signup' %}">Sign Up</a></p>
+        {% endif %}
+
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li class="{{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+    </div>
+{% endblock %}

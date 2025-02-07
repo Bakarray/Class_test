@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Task Detail{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/task_desc.css' %}">
+    <h1>{{ task.title }}</h1>
+    <p><strong>Description:</strong> {{ task.description }}</p>
+    <p><strong>Due Date:</strong> <span class="due-date">{{ task.due_date }}</span></p>
+    <p><strong>Status:</strong> <span class="status {% if task.completed %}completed{% else %}not-completed{% endif %}">{{ task.completed|yesno:"Completed,Not Completed" }}</span></p>
+    <a href="{% url 'edit_task' pk=task.pk %}" class="edit-btn">Edit Task</a>
+    <a href="{% url 'delete_task' pk=task.pk %}" class="delete-btn">Delete Task</a>
+{% endblock %}

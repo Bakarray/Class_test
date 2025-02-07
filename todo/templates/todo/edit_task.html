@@ -1,0 +1,10 @@
+{% extends 'task_form.html' %}
+
+{% block title %}Edit Task{% endblock %}
+
+{% block form_title %}Edit Task{% endblock %}
+
+{% block form_buttons %}
+    <button type="submit" class="btn-save">Save Changes</button>
+    <a href="{% url 'delete_task' pk=task.pk %}" class="btn-delete">Delete Task</a>
+{% endblock %}
