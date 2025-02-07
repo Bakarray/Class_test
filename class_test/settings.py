@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 import os
 from pathlib import Path
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -75,14 +76,15 @@ WSGI_APPLICATION = 'class_test.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
+load_dotenv()
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': os.getenv('DB_PORT', '5432'),
+        'NAME': "todo",
+        'USER': "postgres",
+        'PASSWORD': "bugattis",
+        'HOST': '127.0.0.1',
+        'PORT':  5432
     }
 }
 
@@ -128,3 +130,12 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Login URL (redirects unauthenticated users here)
+LOGIN_URL = 'login' 
+
+# # Redirect after login
+# LOGIN_REDIRECT_URL = 'home_page'
+
+# # Redirect after logout
+# LOGOUT_REDIRECT_URL = 'login'
