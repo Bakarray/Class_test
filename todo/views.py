@@ -62,6 +62,7 @@ class TaskUpdateView(LoginRequiredMixin, UpdateView):
 class TaskDeleteView(LoginRequiredMixin, DeleteView):
     model = Task
     success_url = reverse_lazy('home_page')
+    template_name = 'todo/delete_task.html'
 
     def get_object(self, queryset=None):
         obj = super().get_object(queryset=queryset)

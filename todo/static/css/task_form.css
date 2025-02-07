@@ -1,0 +1,127 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styles */
+h1 {
+    color: #333333;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555555;
+}
+
+input[type="text"],
+input[type="date"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #2196f3; /* Blue focus outline */
+}
+
+/* Error Messages */
+.error-list {
+    color: #f44336; /* Red for error messages */
+    font-size: 14px;
+    margin-top: 5px;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/* Buttons */
+button,
+a.btn {
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover,
+a.btn:hover {
+    opacity: 0.9;
+}
+
+/* Create Button */
+button.btn-create {
+    background-color: #4caf50; /* Green for create button */
+}
+
+button.btn-create:hover {
+    background-color: #43a047;
+}
+
+/* Save Button */
+button.btn-save {
+    background-color: #2196f3; /* Blue for save button */
+}
+
+button.btn-save:hover {
+    background-color: #1976d2;
+}
+
+/* Delete Button */
+a.btn-delete {
+    background-color: #f44336; /* Red for delete button */
+}
+
+a.btn-delete:hover {
+    background-color: #e53935;
+}
+
+/* Back Button */
+a.btn-back {
+    background-color: #607d8b; /* Gray for back button */
+    color: white;
+}
+
+a.btn-back:hover {
+    background-color: #546e7a;
+}
