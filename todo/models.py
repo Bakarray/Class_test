@@ -15,6 +15,7 @@ class Task(models.Model):
     priority = models.CharField(max_length=10, choices=priority_choices, default='medium')
     created_at = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    completed = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title
